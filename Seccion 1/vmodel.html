@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-Model</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="jumbotron">
+            <h1 v-once>{{mensaje}}</h1>
+        </div>
+        <hr>
+        <div v-html="codeHTML">
+        </div>
+        <hr>
+        <h1>{{mensaje}}</h1>
+        <input class="form-control" type="text" v-model="mensaje" />
+        <div v-bind:class="success" role="alert">
+            A simple primary alert—check it out! <a :href="url" target="_blank">Documentacion Alerts</a>
+          </div>
+    </div>
+    <script>
+        var myApp = new Vue({
+            el: "#app",
+            data:{
+                mensaje: "Hola Mundo desde Vue",
+                primary: "alert alert-primary",
+                secondary: "alert alert-secondary",
+                success: "alert alert-success",
+                warning: "alert alert-warning",
+                url: "https://getbootstrap.com/docs/4.3/components/alerts/",
+                codeHTML: '<button type="button" class="btn btn-success">Success</button>'
+            }
+        });
+    </script>
+</body>
+</html>

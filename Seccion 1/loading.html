@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <style>
+        [v-cloak] > *{display: none}
+        [v-cloak]::before{
+            content: "";
+            display: block;
+            width: 120px;
+            height: 120px;
+            margin-bottom: 10px;
+            background-image: url("https://loading.io/mod/spinner/rolling/sample.gif");
+        }
+    </style>
+    <div id="app" v-cloak>
+        <h1>{{mensaje}}</h1>
+    </div>
+    <button onclick="loadFunction()">Cargar App</button>
+</body>
+<script>
+    function loadFunction(){
+        var myApp = new Vue({
+            el: "#app",
+            data:{
+                mensaje: "Bienvenido al Curso"
+            }
+        });
+    }
+</script>
+</html>

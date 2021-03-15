@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+</head>
+<body onload="cargar()">
+    <p>
+        <h1 id="texto" onmouseover="In()" onmouseout="Out()">Funcionalidad de eventos</h1>
+    </p>
+    <input type="text" id="entrada" onkeypress="Write()">
+</body>
+<script>
+    function cargar(){
+        alert("La pagina ha cargado correctamente");
+    }
+    
+    function In(){
+        document.getElementById("texto").style.color="red";
+    }
+
+    function Out(){
+        document.getElementById("texto").style.color="black";
+    }
+
+    function Write(){
+        console.log("Entrada detectada");
+    }
+</script>
+</html>

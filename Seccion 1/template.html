@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="js/vue.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template</title>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="jumbotron">
+                <h1>Lista de Correos</h1>
+                <template v-for="correo in lista">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title">{{correo.titulo}}</h5>
+                          <p class="card-text">{{correo.descripcion}}</p>
+                        </div>
+                      </div>
+                </template>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var vm = new Vue ({
+        el: "#app",
+        data:{
+            lista:[
+                {titulo: "Correo 1", descripcion: "Descripcion del correo 1"},
+                {titulo: "Correo 2", descripcion: "Descripcion del correo 2"},
+                {titulo: "Correo 3", descripcion: "Descripcion del correo 3"},
+                {titulo: "Correo 4", descripcion: "Descripcion del correo 4"}
+            ]
+        }
+    });
+</script>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="row pt-3">
+                <h3>Mi Lista de pasatiempo</h3>
+                <div class="col-12">
+                    <form>
+                        <div class="form-group">
+                          <label for="clave">Clave</label>
+                          <input type="text" class="form-control" id="clave" v-model="clave">
+                        </div>
+                        <div class="form-group">
+                          <label for="titulo">Titulo</label>
+                          <input type="text" class="form-control" id="titulo" v-model="titulo">
+                        </div>
+                        <div class="form-group">
+                            <label for="descripcion">Descripcion</label>
+                            <input type="text" class="form-control" id="descripcion" v-model="descripcion">
+                        </div>
+                        <button class="btn btn-primary" v-on:click.prevent="agregar(clave,titulo,descripcion)"><i class="fa fa-save"></i> Guardar</button>
+                      </form>
+                      <hr>
+                </div>
+                <div class="col-12">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span>
+                        </div>
+                        <input type="text" class="form-control" v-model="txtBuscar">
+                    </div>
+
+                    <ul class="list-group">
+                        <li v-for="item in listaFiltrada" class="list-group-item">{{item.clave}} - {{item.titulo}} : {{item.descripcion}} <button v-on:click="eliminar(item.clave)" class="btn btn-danger"><i class="fa fa-trash"></i></button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-database.js"></script>
+<script src="js/ini.js"></script>
+<script src="js/vue.js"></script>
+<script src="app.js"></script>
+</html>
